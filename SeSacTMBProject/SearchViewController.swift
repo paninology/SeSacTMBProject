@@ -7,23 +7,58 @@
 
 import UIKit
 
+import Alamofire
+import SwiftyJSON
+
 class SearchViewController: UIViewController {
 
+    @IBOutlet weak var searchCollectionView: UICollectionView!
+    
+    var titles: [String] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        searchCollectionView.delegate = self
+        searchCollectionView.dataSource = self
+        requestTMBD()
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func requestTMBD() {
+        
+        let url = EndPoint.TMDBURL + APIKey.TMBDKey
+        AF.request(url, method: .get).validate().responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                print("JSON:", json)
+                for n in json["result"].arrayValue {
+                    self.titles.append(n["title"].stringValue)
+                }
+                print(self.titles)
+                        
+            case .failure(let error):
+                print(error)
+            }
+        }
+            
     }
-    */
+  
 
+}
+
+extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchCollectionViewCell.reuseIdentifier, for: indexPath) as! SearchCollectionViewCell
+        
+        return cell
+    }
+    
+    
 }
