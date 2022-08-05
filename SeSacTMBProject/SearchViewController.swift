@@ -24,7 +24,7 @@ class SearchViewController: UIViewController {
         searchCollectionView.dataSource = self
         searchCollectionView.register(UINib(nibName: SearchCollectionViewCell
             .reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: SearchCollectionViewCell.reuseIdentifier)
-        
+       
         
         
         
@@ -42,6 +42,7 @@ class SearchViewController: UIViewController {
         layout.minimumLineSpacing = spacing
         layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
         layout.itemSize = CGSize(width: cellWidth, height: cellWidth)
+        
         self.searchCollectionView.collectionViewLayout = layout
     }
     
@@ -82,11 +83,30 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchCollectionViewCell.reuseIdentifier, for: indexPath) as! SearchCollectionViewCell
         
-        cell.posterImageView.image
+        cell.bottomView.layer.cornerRadius = 10
+        cell.bottomView.clipsToBounds = true
+//        cell.bottomView.layer.shadowRadius = 5
+//        cell.bottomView.layer.shadowColor = CGColor(gray: 100, alpha: 0.5)
+//        cell.bottomView.layer.shadowOffset = .init(width: 5, height: 5)
+        
+        cell.clipButton.backgroundColor = .white
+        cell.clipButton.layer.cornerRadius = cell.clipButton.frame.height / 2
+        cell.clipButton.tintColor = .black
+        cell.rateNameLabel.backgroundColor = .systemIndigo
+        cell.rateNameLabel.textColor = .white
+        cell.rateNameLabel.font = .systemFont(ofSize: 12)
+        cell.rateLabel.backgroundColor = .white
+        cell.rateLabel.textColor = .black
+        cell.rateLabel.font = .systemFont(ofSize: 12)
+        cell.releaseDateLabel.font = .systemFont(ofSize: 14)
+        cell.releaseDateLabel.textColor = .systemGray
+        cell.detailButton.tintColor = .black
+        
+        cell.lineLabel.layer.borderWidth = 2
         
         cell.titleLabel.text = TMDBs[indexPath.row].title
         cell.posterImageView.kf.setImage(with: URL(string: EndPoint.TMBDImageURL + TMDBs[indexPath.row].imageURL))
-        cell.rateLabel.text =  ( round(TMDBs[indexPath.row].rate * 10) / 10 ).description
+        cell.rateLabel.text =  "  \((round(TMDBs[indexPath.row].rate * 10) / 10 ).description)  "
         cell.releaseDateLabel.text = TMDBs[indexPath.row].releaseDate
         
         return cell

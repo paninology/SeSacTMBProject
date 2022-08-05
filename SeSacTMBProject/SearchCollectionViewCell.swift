@@ -16,6 +16,7 @@ class SearchCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var posterImageView: UIImageView!
     
     @IBOutlet weak var lineLabel: UILabel!
+    @IBOutlet weak var rateNameLabel: UILabel!
     @IBOutlet weak var rateLabel: UILabel!
     
     @IBOutlet weak var titleLabel: UILabel!
@@ -23,6 +24,9 @@ class SearchCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var actorsLabel: UILabel!
     @IBOutlet weak var bottomView: UIView!
     
+    @IBOutlet weak var clipButton: UIButton!
+    
+    @IBOutlet weak var detailButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

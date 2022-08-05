@@ -36,12 +36,19 @@
                                 <rect key="frame" x="0.0" y="0.0" width="407" height="193.5"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dRu-Ev-MWV">
-                                <rect key="frame" x="354" y="8" width="45" height="31"/>
+                                <rect key="frame" x="367" y="8" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="7Dd-TI-mOv"/>
+                                    <constraint firstAttribute="width" secondItem="dRu-Ev-MWV" secondAttribute="height" id="Dz8-zg-jHQ"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="paperclip" catalog="system"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="평점" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0r8-or-zAq">
-                                <rect key="frame" x="8" y="164.5" width="30" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 평점 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0r8-or-zAq">
+                                <rect key="frame" x="8" y="161.5" width="38.5" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="SXY-R6-ZwY"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -68,8 +75,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="자세히 보기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eFG-2B-S9c">
-                                <rect key="frame" x="8" y="269" width="78" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="8" y="273" width="64.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -78,7 +85,10 @@
                                 <buttonConfiguration key="configuration" style="plain" image="chevron.right" catalog="system"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6lg-kk-73W">
-                                <rect key="frame" x="38" y="164.5" width="42" height="21"/>
+                                <rect key="frame" x="46.5" y="161.5" width="42" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="qE3-uQ-4ZG"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -128,10 +138,13 @@
             <connections>
                 <outlet property="actorsLabel" destination="Hah-Jm-mYi" id="b1u-fv-FSn"/>
                 <outlet property="bottomView" destination="snv-JW-xVe" id="PXp-Ks-cpQ"/>
+                <outlet property="clipButton" destination="dRu-Ev-MWV" id="ln1-0W-iO2"/>
+                <outlet property="detailButton" destination="KFm-5i-EY1" id="WEe-o1-2EU"/>
                 <outlet property="genreLabel" destination="z87-PO-u3i" id="tEu-r6-chZ"/>
                 <outlet property="lineLabel" destination="ge0-Ob-85Z" id="HOz-dX-R6g"/>
                 <outlet property="posterImageView" destination="wRJ-Ho-xIF" id="4XE-9o-9Mw"/>
                 <outlet property="rateLabel" destination="6lg-kk-73W" id="CXz-t1-NHq"/>
+                <outlet property="rateNameLabel" destination="0r8-or-zAq" id="6ny-KX-RNU"/>
                 <outlet property="releaseDateLabel" destination="GoX-h9-zDa" id="Suu-fR-cuW"/>
                 <outlet property="titleLabel" destination="o8v-tO-9sI" id="yqQ-ty-1kb"/>
             </connections>
