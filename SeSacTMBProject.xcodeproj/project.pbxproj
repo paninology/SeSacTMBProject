@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F46347D289CEBA30025D731 /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F46347B289CEBA30025D731 /* SearchCollectionViewCell.swift */; };
+		8F46347E289CEBA30025D731 /* SearchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F46347C289CEBA30025D731 /* SearchCollectionViewCell.xib */; };
+		8F463480289CF7F30025D731 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F46347F289CF7F30025D731 /* Model.swift */; };
+		8F463483289CFC690025D731 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8F463482289CFC690025D731 /* Kingfisher */; };
 		8FCA00702899F6CD00F08BC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCA006F2899F6CD00F08BC1 /* AppDelegate.swift */; };
 		8FCA00722899F6CD00F08BC1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCA00712899F6CD00F08BC1 /* SceneDelegate.swift */; };
 		8FCA00742899F6CD00F08BC1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCA00732899F6CD00F08BC1 /* ViewController.swift */; };
@@ -19,13 +23,15 @@
 		8FCA008A2899F9C300F08BC1 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCA00892899F9C300F08BC1 /* Constant.swift */; };
 		8FCA008D2899FAA700F08BC1 /* Examplee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCA008C2899FAA700F08BC1 /* Examplee.swift */; };
 		8FCA00902899FACE00F08BC1 /* Example2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCA008F2899FACE00F08BC1 /* Example2.swift */; };
-		8FCA0094289A38C200F08BC1 /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCA0093289A38C200F08BC1 /* SearchCollectionViewCell.swift */; };
 		8FCA0096289A3AB800F08BC1 /* ReuserbleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCA0095289A3AB800F08BC1 /* ReuserbleExtensions.swift */; };
 		8FCA009C289AA14700F08BC1 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8FCA009B289AA14700F08BC1 /* Alamofire */; };
 		8FFDF629289AA24F00DEDF40 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 8FFDF628289AA24F00DEDF40 /* SwiftyJSON */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8F46347B289CEBA30025D731 /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		8F46347C289CEBA30025D731 /* SearchCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCollectionViewCell.xib; sourceTree = "<group>"; };
+		8F46347F289CF7F30025D731 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		8FCA006C2899F6CD00F08BC1 /* SeSacTMBProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSacTMBProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FCA006F2899F6CD00F08BC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8FCA00712899F6CD00F08BC1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,7 +46,6 @@
 		8FCA00892899F9C300F08BC1 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		8FCA008C2899FAA700F08BC1 /* Examplee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Examplee.swift; sourceTree = "<group>"; };
 		8FCA008F2899FACE00F08BC1 /* Example2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Example2.swift; sourceTree = "<group>"; };
-		8FCA0093289A38C200F08BC1 /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		8FCA0095289A3AB800F08BC1 /* ReuserbleExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuserbleExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -49,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F463483289CFC690025D731 /* Kingfisher in Frameworks */,
 				8FFDF629289AA24F00DEDF40 /* SwiftyJSON in Frameworks */,
 				8FCA009C289AA14700F08BC1 /* Alamofire in Frameworks */,
 			);
@@ -83,9 +89,11 @@
 				8FCA008B2899FA8500F08BC1 /* Key */,
 				8FCA0097289A3AE500F08BC1 /* Extensions */,
 				8FCA00732899F6CD00F08BC1 /* ViewController.swift */,
+				8F46347F289CF7F30025D731 /* Model.swift */,
 				8FCA00752899F6CD00F08BC1 /* Main.storyboard */,
-				8FCA0093289A38C200F08BC1 /* SearchCollectionViewCell.swift */,
 				8FCA00852899F82F00F08BC1 /* SearchViewController.swift */,
+				8F46347C289CEBA30025D731 /* SearchCollectionViewCell.xib */,
+				8F46347B289CEBA30025D731 /* SearchCollectionViewCell.swift */,
 				8FCA00782899F6CE00F08BC1 /* Assets.xcassets */,
 				8FCA007A2899F6CE00F08BC1 /* LaunchScreen.storyboard */,
 				8FCA007D2899F6CE00F08BC1 /* Info.plist */,
@@ -138,6 +146,7 @@
 			packageProductDependencies = (
 				8FCA009B289AA14700F08BC1 /* Alamofire */,
 				8FFDF628289AA24F00DEDF40 /* SwiftyJSON */,
+				8F463482289CFC690025D731 /* Kingfisher */,
 			);
 			productName = SeSacTMBProject;
 			productReference = 8FCA006C2899F6CD00F08BC1 /* SeSacTMBProject.app */;
@@ -172,6 +181,7 @@
 				8FCA009D289AA15A00F08BC1 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				8FCA009E289AA17300F08BC1 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				8FFDF627289AA24F00DEDF40 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				8F463481289CFC690025D731 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 8FCA006D2899F6CD00F08BC1 /* Products */;
 			projectDirPath = "";
@@ -189,6 +199,7 @@
 			files = (
 				8FCA00842899F7D400F08BC1 /* .gitignore in Resources */,
 				8FCA007C2899F6CE00F08BC1 /* LaunchScreen.storyboard in Resources */,
+				8F46347E289CEBA30025D731 /* SearchCollectionViewCell.xib in Resources */,
 				8FCA00792899F6CE00F08BC1 /* Assets.xcassets in Resources */,
 				8FCA00772899F6CD00F08BC1 /* Main.storyboard in Resources */,
 			);
@@ -205,12 +216,13 @@
 				8FCA00742899F6CD00F08BC1 /* ViewController.swift in Sources */,
 				8FCA00702899F6CD00F08BC1 /* AppDelegate.swift in Sources */,
 				8FCA00862899F82F00F08BC1 /* SearchViewController.swift in Sources */,
+				8F46347D289CEBA30025D731 /* SearchCollectionViewCell.swift in Sources */,
 				8FCA00722899F6CD00F08BC1 /* SceneDelegate.swift in Sources */,
 				8FCA00882899F88400F08BC1 /* APIKey.swift in Sources */,
 				8FCA008A2899F9C300F08BC1 /* Constant.swift in Sources */,
+				8F463480289CF7F30025D731 /* Model.swift in Sources */,
 				8FCA00902899FACE00F08BC1 /* Example2.swift in Sources */,
 				8FCA0096289A3AB800F08BC1 /* ReuserbleExtensions.swift in Sources */,
-				8FCA0094289A38C200F08BC1 /* SearchCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,6 +442,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		8F463481289CFC690025D731 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 		8FCA009A289AA14700F08BC1 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -465,6 +485,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		8F463482289CFC690025D731 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8FCA009E289AA17300F08BC1 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		8FCA009B289AA14700F08BC1 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8FCA009A289AA14700F08BC1 /* XCRemoteSwiftPackageReference "Alamofire" */;
