@@ -16,6 +16,7 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var searchCollectionView: UICollectionView!
     
     var TMDBs:[TMDBContents] = []
+    var genre: [Int: String] = [0:"??"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,12 +26,8 @@ class SearchViewController: UIViewController {
         searchCollectionView.register(UINib(nibName: SearchCollectionViewCell
             .reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: SearchCollectionViewCell.reuseIdentifier)
        
-        
-        
-        
         requestTMBD()
-        
-        
+        requestGenre()
     }
     
     func cellLayoutSetting() {
@@ -45,7 +42,24 @@ class SearchViewController: UIViewController {
         
         self.searchCollectionView.collectionViewLayout = layout
     }
-    
+    func requestGenre() {
+        let url = EndPoint.TMDBGenre + APIKey.TMBDKey + "&language=en-US"
+        AF.request(url, method: .get).validate().responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+//                print("genre++++++++",json)
+                for n in json["genres"].arrayValue {
+//                    print("n============",n)
+                    self.genre[n["id"].intValue] = n["name"].stringValue
+                }
+                self.searchCollectionView.reloadData()
+                
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
     
     func requestTMBD() {
         
@@ -57,8 +71,8 @@ class SearchViewController: UIViewController {
                 
                 for n in json["results"].arrayValue {
           
-                    self.TMDBs.append(TMDBContents(title: n["title"].stringValue, releaseDate: n["release_date"].stringValue, genre: [n["genre_ids"].stringValue], imageURL: n["poster_path"].stringValue, rate: n["vote_average"].doubleValue))
-                    print( n["title"])
+                    self.TMDBs.append(TMDBContents(title: n["title"].stringValue, releaseDate: n["release_date"].stringValue, genre: [n["genre_ids"][0].intValue], imageURL: n["poster_path"].stringValue, rate: n["vote_average"].doubleValue))
+//                    print( n["title"])
                 }
          
                 self.searchCollectionView.reloadData()
@@ -71,6 +85,14 @@ class SearchViewController: UIViewController {
     }
   
 
+}
+extension SearchViewController: UICollectionViewDataSourcePrefetching {
+  
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        
+    }
+    
+    
 }
 
 extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -108,6 +130,10 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
         cell.posterImageView.kf.setImage(with: URL(string: EndPoint.TMBDImageURL + TMDBs[indexPath.row].imageURL))
         cell.rateLabel.text =  "  \((round(TMDBs[indexPath.row].rate * 10) / 10 ).description)  "
         cell.releaseDateLabel.text = TMDBs[indexPath.row].releaseDate
+        cell.genreLabel.text = self.genre[TMDBs[indexPath.row].genre[0]]
+        
+        print(TMDBs)
+
         
         return cell
     }

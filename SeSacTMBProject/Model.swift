@@ -10,7 +10,7 @@ import Foundation
 struct TMDBContents {
     let title: String
     let releaseDate: String
-    let genre: [String]
+    let genre: [Int]
     let imageURL: String
     let rate: Double
 //    let actors: [String]?
