@@ -13,3 +13,15 @@ extension UICollectionViewCell {
         return String(describing: self)
     }
 }
+
+extension UIViewController {
+    static var reuseIdentifier: String {
+        return String(describing: self)
+    }
+}
+
+extension UITableViewCell {
+    static var reuseIdentifier: String {
+        return String(describing: self)
+    }
+}

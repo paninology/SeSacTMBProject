@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F3A3137289E38FA0016DFF5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3A3136289E38FA0016DFF5 /* DetailViewController.swift */; };
+		8F3A313B289E44860016DFF5 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3A313A289E44860016DFF5 /* DetailTableViewCell.swift */; };
 		8F46347D289CEBA30025D731 /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F46347B289CEBA30025D731 /* SearchCollectionViewCell.swift */; };
 		8F46347E289CEBA30025D731 /* SearchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F46347C289CEBA30025D731 /* SearchCollectionViewCell.xib */; };
 		8F463480289CF7F30025D731 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F46347F289CF7F30025D731 /* Model.swift */; };
@@ -29,6 +31,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8F3A3136289E38FA0016DFF5 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		8F3A313A289E44860016DFF5 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		8F46347B289CEBA30025D731 /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		8F46347C289CEBA30025D731 /* SearchCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCollectionViewCell.xib; sourceTree = "<group>"; };
 		8F46347F289CF7F30025D731 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
@@ -92,6 +96,8 @@
 				8F46347F289CF7F30025D731 /* Model.swift */,
 				8FCA00752899F6CD00F08BC1 /* Main.storyboard */,
 				8FCA00852899F82F00F08BC1 /* SearchViewController.swift */,
+				8F3A3136289E38FA0016DFF5 /* DetailViewController.swift */,
+				8F3A313A289E44860016DFF5 /* DetailTableViewCell.swift */,
 				8F46347C289CEBA30025D731 /* SearchCollectionViewCell.xib */,
 				8F46347B289CEBA30025D731 /* SearchCollectionViewCell.swift */,
 				8FCA00782899F6CE00F08BC1 /* Assets.xcassets */,
@@ -215,6 +221,8 @@
 				8FCA008D2899FAA700F08BC1 /* Examplee.swift in Sources */,
 				8FCA00742899F6CD00F08BC1 /* ViewController.swift in Sources */,
 				8FCA00702899F6CD00F08BC1 /* AppDelegate.swift in Sources */,
+				8F3A313B289E44860016DFF5 /* DetailTableViewCell.swift in Sources */,
+				8F3A3137289E38FA0016DFF5 /* DetailViewController.swift in Sources */,
 				8FCA00862899F82F00F08BC1 /* SearchViewController.swift in Sources */,
 				8F46347D289CEBA30025D731 /* SearchCollectionViewCell.swift in Sources */,
 				8FCA00722899F6CD00F08BC1 /* SceneDelegate.swift in Sources */,

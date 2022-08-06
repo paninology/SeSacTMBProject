@@ -138,5 +138,14 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: DetailViewController.reuseIdentifier) as! DetailViewController
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+        vc.TMBD = TMDBs[indexPath.row]
+    }
+    
     
 }
