@@ -13,5 +13,13 @@ struct TMDBContents {
     let genre: [Int]
     let imageURL: String
     let rate: Double
+    let id: Int
 //    let actors: [String]?
+}
+
+struct Castings {
+    let name: String
+    let id: Int
+    let department: String
+    let imagePath: String
 }

@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import Kingfisher
+import SwiftUI
 
 class SearchViewController: UIViewController {
 
@@ -71,7 +72,7 @@ class SearchViewController: UIViewController {
                 
                 for n in json["results"].arrayValue {
           
-                    self.TMDBs.append(TMDBContents(title: n["title"].stringValue, releaseDate: n["release_date"].stringValue, genre: [n["genre_ids"][0].intValue], imageURL: n["poster_path"].stringValue, rate: n["vote_average"].doubleValue))
+                    self.TMDBs.append(TMDBContents(title: n["title"].stringValue, releaseDate: n["release_date"].stringValue, genre: [n["genre_ids"][0].intValue], imageURL: n["poster_path"].stringValue, rate: n["vote_average"].doubleValue, id: n["id"].intValue))
 //                    print( n["title"])
                 }
          
@@ -132,6 +133,9 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
         cell.releaseDateLabel.text = TMDBs[indexPath.row].releaseDate
         cell.genreLabel.text = self.genre[TMDBs[indexPath.row].genre[0]]
         
+        cell.clipButton.tag = indexPath.row
+        cell.clipButton.addTarget(self, action: #selector(clipButtonClicked), for: .touchUpInside)
+        
         print(TMDBs)
 
         
@@ -145,6 +149,16 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
         self.navigationController?.pushViewController(vc, animated: true)
         
         vc.TMBD = TMDBs[indexPath.row]
+    }
+    
+    @objc func clipButtonClicked(sender: UIButton) {
+        
+        let sb = UIStoryboard(name: "Web", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: PreviewWebViewController.reuseIdentifier) as! PreviewWebViewController
+        
+        vc.movieID = self.TMDBs[sender.tag].id
+        self.navigationController?.pushViewController(vc, animated: true)
+        
     }
     
     

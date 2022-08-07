@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F0A2460289FD236006B5480 /* Web.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F0A245F289FD236006B5480 /* Web.storyboard */; };
+		8F0A2462289FD25D006B5480 /* PreviewWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0A2461289FD25D006B5480 /* PreviewWebViewController.swift */; };
 		8F3A3137289E38FA0016DFF5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3A3136289E38FA0016DFF5 /* DetailViewController.swift */; };
 		8F3A313B289E44860016DFF5 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3A313A289E44860016DFF5 /* DetailTableViewCell.swift */; };
 		8F46347D289CEBA30025D731 /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F46347B289CEBA30025D731 /* SearchCollectionViewCell.swift */; };
@@ -31,6 +33,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8F0A245F289FD236006B5480 /* Web.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Web.storyboard; sourceTree = "<group>"; };
+		8F0A2461289FD25D006B5480 /* PreviewWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewWebViewController.swift; sourceTree = "<group>"; };
 		8F3A3136289E38FA0016DFF5 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		8F3A313A289E44860016DFF5 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		8F46347B289CEBA30025D731 /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -100,6 +104,8 @@
 				8F3A313A289E44860016DFF5 /* DetailTableViewCell.swift */,
 				8F46347C289CEBA30025D731 /* SearchCollectionViewCell.xib */,
 				8F46347B289CEBA30025D731 /* SearchCollectionViewCell.swift */,
+				8F0A245F289FD236006B5480 /* Web.storyboard */,
+				8F0A2461289FD25D006B5480 /* PreviewWebViewController.swift */,
 				8FCA00782899F6CE00F08BC1 /* Assets.xcassets */,
 				8FCA007A2899F6CE00F08BC1 /* LaunchScreen.storyboard */,
 				8FCA007D2899F6CE00F08BC1 /* Info.plist */,
@@ -208,6 +214,7 @@
 				8F46347E289CEBA30025D731 /* SearchCollectionViewCell.xib in Resources */,
 				8FCA00792899F6CE00F08BC1 /* Assets.xcassets in Resources */,
 				8FCA00772899F6CD00F08BC1 /* Main.storyboard in Resources */,
+				8F0A2460289FD236006B5480 /* Web.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,6 +235,7 @@
 				8FCA00722899F6CD00F08BC1 /* SceneDelegate.swift in Sources */,
 				8FCA00882899F88400F08BC1 /* APIKey.swift in Sources */,
 				8FCA008A2899F9C300F08BC1 /* Constant.swift in Sources */,
+				8F0A2462289FD25D006B5480 /* PreviewWebViewController.swift in Sources */,
 				8F463480289CF7F30025D731 /* Model.swift in Sources */,
 				8FCA00902899FACE00F08BC1 /* Example2.swift in Sources */,
 				8FCA0096289A3AB800F08BC1 /* ReuserbleExtensions.swift in Sources */,
