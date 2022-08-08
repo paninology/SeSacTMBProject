@@ -12,22 +12,25 @@ import SwiftyJSON
 import Kingfisher
 import SwiftUI
 
-class SearchViewController: UIViewController {
+class SearchViewController: UIViewController { //배우정보
 
     @IBOutlet weak var searchCollectionView: UICollectionView!
     
     var TMDBs:[TMDBContents] = []
     var genre: [Int: String] = [0:"??"]
+    var currentPage = 1
+    var totalPage = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
         cellLayoutSetting()
         searchCollectionView.delegate = self
         searchCollectionView.dataSource = self
+        searchCollectionView.prefetchDataSource = self
         searchCollectionView.register(UINib(nibName: SearchCollectionViewCell
             .reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: SearchCollectionViewCell.reuseIdentifier)
        
-        requestTMBD()
+        requestTrending()
         requestGenre()
     }
     
@@ -43,54 +46,45 @@ class SearchViewController: UIViewController {
         
         self.searchCollectionView.collectionViewLayout = layout
     }
+    
     func requestGenre() {
         let url = EndPoint.TMDBGenre + APIKey.TMBDKey + "&language=en-US"
-        AF.request(url, method: .get).validate().responseJSON { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-//                print("genre++++++++",json)
-                for n in json["genres"].arrayValue {
-//                    print("n============",n)
-                    self.genre[n["id"].intValue] = n["name"].stringValue
-                }
-                self.searchCollectionView.reloadData()
-                
-            case .failure(let error):
-                print(error)
+        
+        APIManager.share.requestTMBD(url: url) { json in
+            for n in json["genres"].arrayValue {
+                self.genre[n["id"].intValue] = n["name"].stringValue
             }
+            self.searchCollectionView.reloadData()
         }
+        
     }
     
-    func requestTMBD() {
-        
-        let url = EndPoint.TMDBURL + APIKey.TMBDKey
-        AF.request(url, method: .get).validate().responseJSON { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                
-                for n in json["results"].arrayValue {
-          
-                    self.TMDBs.append(TMDBContents(title: n["title"].stringValue, releaseDate: n["release_date"].stringValue, genre: [n["genre_ids"][0].intValue], imageURL: n["poster_path"].stringValue, rate: n["vote_average"].doubleValue, id: n["id"].intValue))
-//                    print( n["title"])
-                }
-         
-                self.searchCollectionView.reloadData()
-                        
-            case .failure(let error):
-                print(error)
+    func requestTrending() {
+        let url = EndPoint.TMDBURL + APIKey.TMBDKey + "&page=\(currentPage)"
+        APIManager.share.requestTMBD(url: url) { json in
+            for n in json["results"].arrayValue { //map으로 바꿀 수 있을까/..
+                self.TMDBs.append(TMDBContents(title: n["title"].stringValue, releaseDate: n["release_date"].stringValue, genre: [n["genre"][0].intValue], imageURL: n["poster_path"].stringValue, rate: n["vote_average"].doubleValue, id: n["id"].intValue))
             }
+            self.totalPage = json["total_pages"].intValue
         }
-            
+        
     }
-  
+ 
 
 }
 extension SearchViewController: UICollectionViewDataSourcePrefetching {
   
     func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
-        
+        print(indexPaths)
+        print("totalpage=====",self.totalPage)
+        for indexPath in indexPaths {
+            if TMDBs.count - 1 == indexPath.item && TMDBs.count < totalPage {
+                currentPage += 1
+               
+                requestTrending()
+
+            }
+        }
     }
     
     
@@ -135,10 +129,7 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
         
         cell.clipButton.tag = indexPath.row
         cell.clipButton.addTarget(self, action: #selector(clipButtonClicked), for: .touchUpInside)
-        
-        print(TMDBs)
-
-        
+      
         return cell
     }
     

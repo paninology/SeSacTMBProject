@@ -37,7 +37,10 @@ class PreviewWebViewController: UIViewController {
                 
                 let json = JSON(value)
                 let movieKey = json["results"][0]["key"].stringValue
-                self.openWebPage(url: "https://www.youtube.com/watch?v=\(movieKey)")
+                DispatchQueue.main.async {
+                    self.openWebPage(url: "https://www.youtube.com/watch?v=\(movieKey)")
+                }
+                
                 
             case .failure(let error):
                 print(error)
