@@ -22,6 +22,7 @@
 		8F596E0B28A28A40005BD268 /* RecommandCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F596E0928A28A40005BD268 /* RecommandCollectionViewCell.swift */; };
 		8F596E0E28A299E5005BD268 /* RecommandTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F596E0D28A299E5005BD268 /* RecommandTableViewCell.swift */; };
 		8FB05FCC28A2A83800F3E162 /* RecommandCollectionViewCelll.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F596E0A28A28A40005BD268 /* RecommandCollectionViewCelll.xib */; };
+		8FB05FCE28A2AB6A00F3E162 /* NewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB05FCD28A2AB6A00F3E162 /* NewCollectionViewCell.swift */; };
 		8FCA00702899F6CD00F08BC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCA006F2899F6CD00F08BC1 /* AppDelegate.swift */; };
 		8FCA00722899F6CD00F08BC1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCA00712899F6CD00F08BC1 /* SceneDelegate.swift */; };
 		8FCA00772899F6CD00F08BC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FCA00752899F6CD00F08BC1 /* Main.storyboard */; };
@@ -52,6 +53,7 @@
 		8F596E0928A28A40005BD268 /* RecommandCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommandCollectionViewCell.swift; sourceTree = "<group>"; };
 		8F596E0A28A28A40005BD268 /* RecommandCollectionViewCelll.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecommandCollectionViewCelll.xib; sourceTree = "<group>"; };
 		8F596E0D28A299E5005BD268 /* RecommandTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommandTableViewCell.swift; sourceTree = "<group>"; };
+		8FB05FCD28A2AB6A00F3E162 /* NewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCollectionViewCell.swift; sourceTree = "<group>"; };
 		8FCA006C2899F6CD00F08BC1 /* SeSacTMBProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSacTMBProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FCA006F2899F6CD00F08BC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8FCA00712899F6CD00F08BC1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				8F596DFD28A22B09005BD268 /* Recommand.storyboard */,
 				8F596E0D28A299E5005BD268 /* RecommandTableViewCell.swift */,
 				8F596E0328A22BF2005BD268 /* RecommandViewController.swift */,
+				8FB05FCD28A2AB6A00F3E162 /* NewCollectionViewCell.swift */,
 				8F596E0928A28A40005BD268 /* RecommandCollectionViewCell.swift */,
 			);
 			path = Recommand;
@@ -279,6 +282,7 @@
 				8F596E0428A22BF2005BD268 /* RecommandViewController.swift in Sources */,
 				8FCA008D2899FAA700F08BC1 /* Examplee.swift in Sources */,
 				8FCA00702899F6CD00F08BC1 /* AppDelegate.swift in Sources */,
+				8FB05FCE28A2AB6A00F3E162 /* NewCollectionViewCell.swift in Sources */,
 				8F3A313B289E44860016DFF5 /* DetailTableViewCell.swift in Sources */,
 				8F3A3137289E38FA0016DFF5 /* DetailViewController.swift in Sources */,
 				8F596E0B28A28A40005BD268 /* RecommandCollectionViewCell.swift in Sources */,

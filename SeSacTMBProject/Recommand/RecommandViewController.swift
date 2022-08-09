@@ -18,6 +18,7 @@ class RecommandViewController: UIViewController {
         
         recommandTableView.dataSource = self
         recommandTableView.delegate = self
+        
       
     }
     
@@ -41,7 +42,8 @@ extension RecommandViewController: UITableViewDelegate, UITableViewDataSource {
         }
         cell.recommandCollectionView.dataSource = self
         cell.recommandCollectionView.delegate = self
-        cell.recommandCollectionView.register(UINib(nibName: "RecommandCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "RecommandCollectionViewCell")
+        cell.recommandCollectionView.collectionViewLayout = collectionViewLayout()
+//        cell.recommandCollectionView.register(UINib(nibName: "RecommandCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "RecommandCollectionViewCell") //xib 오류나서 일단 일반셀로 만듬
         
         return cell
     }
@@ -60,12 +62,24 @@ extension RecommandViewController: UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecommandCollectionViewCell.reuseIdentifier, for: indexPath) as? RecommandCollectionViewCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewCollectionViewCell", for: indexPath) as? NewCollectionViewCell else { return UICollectionViewCell() } //xib 오류나서 일단 일반셀로 만듬
         
         
         
         
         return cell
+    }
+    
+    func collectionViewLayout() -> UICollectionViewFlowLayout {
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.itemSize = CGSize(width: UIScreen.main.bounds.width , height: 100)
+        layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = 0
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0 )
+        
+        return layout
     }
     
     
