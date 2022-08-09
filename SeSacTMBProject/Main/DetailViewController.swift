@@ -13,14 +13,12 @@ import SwiftyJSON
 
 
 class DetailViewController: UIViewController {
-
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var backImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var smallImageView: UIImageView!
-    
     
     var TMBD: TMDBContents = TMDBContents(title: "default", releaseDate: "", genre: [0], imageURL: "", rate: 0, id: 0)
     var casting: [Castings] = []
@@ -29,10 +27,7 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-     
-        
-        print(TMBD, "detail tmbd======")
-       
+  
 //        backImageView.layer.opacity = 0.5
         
         backImageView.kf.setImage(with: URL(string: EndPoint.TMBDImageURL + TMBD.imageURL))
@@ -44,25 +39,16 @@ class DetailViewController: UIViewController {
     }
     
     func requestCasting() {
-        //AF: 200-299 status code 가 성공인데 커스텀으로 추가 하고싶으면 validate
+
         let url = "https://api.themoviedb.org/3/movie/\(TMBD.id)/credits?api_key=\(APIKey.TMBDKey)&language=en-US"
-        AF.request(url, method: .get).validate().responseJSON { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                print("JSON:", json)
-                for n in json["cast"].arrayValue {
-                    self.casting.append(Castings(name: n["name"].stringValue, id: n["id"].intValue, department: n["known_for_department"].stringValue, imagePath: n["profile_path"].stringValue))
-                    
-                }
-                self.tableView.reloadData()
+        APIManager.share.requestTMBD(url: url) { json in
+            for n in json["cast"].arrayValue {
+                self.casting.append(Castings(name: n["name"].stringValue, id: n["id"].intValue, department: n["known_for_department"].stringValue, imagePath: n["profile_path"].stringValue))
                 
-            case .failure(let error):
-                print(error)
             }
+            self.tableView.reloadData()
         }
     }
-
 }
 extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     

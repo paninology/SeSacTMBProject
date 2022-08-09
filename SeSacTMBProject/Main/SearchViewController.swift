@@ -30,7 +30,6 @@ class SearchViewController: UIViewController { //배우정보
         searchCollectionView.register(UINib(nibName: SearchCollectionViewCell
             .reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: SearchCollectionViewCell.reuseIdentifier)
        
-        requestTrending()
         requestGenre()
     }
     
@@ -54,20 +53,20 @@ class SearchViewController: UIViewController { //배우정보
             for n in json["genres"].arrayValue {
                 self.genre[n["id"].intValue] = n["name"].stringValue
             }
-            self.searchCollectionView.reloadData()
+            self.requestTrending()
         }
-        
     }
     
-    func requestTrending() {
+    func requestTrending() {  //[0].intValue
         let url = EndPoint.TMDBURL + APIKey.TMBDKey + "&page=\(currentPage)"
         APIManager.share.requestTMBD(url: url) { json in
             for n in json["results"].arrayValue { //map으로 바꿀 수 있을까/..
-                self.TMDBs.append(TMDBContents(title: n["title"].stringValue, releaseDate: n["release_date"].stringValue, genre: [n["genre"][0].intValue], imageURL: n["poster_path"].stringValue, rate: n["vote_average"].doubleValue, id: n["id"].intValue))
+                self.TMDBs.append(TMDBContents(title: n["title"].stringValue, releaseDate: n["release_date"].stringValue, genre: [n["genre_ids"].intValue], imageURL: n["poster_path"].stringValue, rate: n["vote_average"].doubleValue, id: n["id"].intValue))
             }
             self.totalPage = json["total_pages"].intValue
+            print(self.TMDBs)
+            self.searchCollectionView.reloadData()
         }
-        
     }
  
 
@@ -75,19 +74,16 @@ class SearchViewController: UIViewController { //배우정보
 extension SearchViewController: UICollectionViewDataSourcePrefetching {
   
     func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
-        print(indexPaths)
-        print("totalpage=====",self.totalPage)
+   
         for indexPath in indexPaths {
             if TMDBs.count - 1 == indexPath.item && TMDBs.count < totalPage {
                 currentPage += 1
-               
+        
                 requestTrending()
 
             }
         }
     }
-    
-    
 }
 
 extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -125,7 +121,11 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
         cell.posterImageView.kf.setImage(with: URL(string: EndPoint.TMBDImageURL + TMDBs[indexPath.row].imageURL))
         cell.rateLabel.text =  "  \((round(TMDBs[indexPath.row].rate * 10) / 10 ).description)  "
         cell.releaseDateLabel.text = TMDBs[indexPath.row].releaseDate
+//        for n in 0...(self.genre[TMDBs[indexPath.row].genre.count - 1) {
+//
+//        }
         cell.genreLabel.text = self.genre[TMDBs[indexPath.row].genre[0]]
+        print(self.genre[TMDBs[indexPath.row].genre[0]], self.genre)
         
         cell.clipButton.tag = indexPath.row
         cell.clipButton.addTarget(self, action: #selector(clipButtonClicked), for: .touchUpInside)
@@ -151,6 +151,5 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
         self.navigationController?.pushViewController(vc, animated: true)
         
     }
-    
     
 }
