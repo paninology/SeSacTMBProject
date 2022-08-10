@@ -19,7 +19,7 @@ class MovieView: UIView {
       
         let view = UINib(nibName: "MovieView", bundle: nil).instantiate(withOwner: self).first as! UIView
         
-        view.backgroundColor = .blue
+        view.backgroundColor = .red
         self.addSubview(view)
         
         //카드뷰를 인터페이스 빌더 기반으로 만들고, 오토레이아앗도 설정했는데 왜 트루냐......

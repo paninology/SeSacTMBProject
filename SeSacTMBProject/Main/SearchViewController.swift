@@ -64,7 +64,7 @@ class SearchViewController: UIViewController { //배우정보
                 self.TMDBs.append(TMDBContents(title: n["title"].stringValue, releaseDate: n["release_date"].stringValue, genre: [n["genre_ids"].intValue], imageURL: n["poster_path"].stringValue, rate: n["vote_average"].doubleValue, id: n["id"].intValue))
             }
             self.totalPage = json["total_pages"].intValue
-            print(self.TMDBs)
+          
             self.searchCollectionView.reloadData()
         }
     }
@@ -125,8 +125,7 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
 //
 //        }
         cell.genreLabel.text = self.genre[TMDBs[indexPath.row].genre[0]]
-        print(self.genre[TMDBs[indexPath.row].genre[0]], self.genre)
-        
+   
         cell.clipButton.tag = indexPath.row
         cell.clipButton.addTarget(self, action: #selector(clipButtonClicked), for: .touchUpInside)
       

@@ -14,6 +14,7 @@ class NewRecommandCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+//        movieView.movieImageView.contentMode = .scaleToFill
     }
 
 }
