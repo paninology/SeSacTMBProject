@@ -1,15 +1,14 @@
 //
-//  CollectionViewCell.swift
+//  NewRecommandCollectionViewCell.swift
 //  SeSacTMBProject
 //
-//  Created by yongseok lee on 2022/08/09.
+//  Created by yongseok lee on 2022/08/10.
 //
 
 import UIKit
 
-class RecommandCollectionViewCell: UICollectionViewCell {
-    
-    
+class NewRecommandCollectionViewCell: UICollectionViewCell {
+
     @IBOutlet weak var movieView: MovieView!
     
     override func awakeFromNib() {

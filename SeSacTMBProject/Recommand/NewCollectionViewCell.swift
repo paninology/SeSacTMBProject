@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NewCollectionViewCell: UICollectionViewCell {
+class NewCollectionViewCell: UICollectionViewCell {  ////안쓰는 파일...
     
     @IBOutlet weak var movieView: MovieView!
     

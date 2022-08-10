@@ -23,3 +23,11 @@ struct Castings {
     let department: String
     let imagePath: String
 }
+
+struct Recommend {
+    let id: Int
+    let posterPath: String
+    let title: String
+    let genre: [Int]
+    let overView: String
+}
