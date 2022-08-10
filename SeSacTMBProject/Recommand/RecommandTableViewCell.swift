@@ -16,11 +16,30 @@ class RecommandTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        print("kkkkkkk")
         
         self.backgroundColor = .lightGray
-        cellLabel.textColor = .red
-        cellLabel.font = .boldSystemFont(ofSize: 24)
+       
+        setupUI()
     }
 
-   
+    func setupUI() {
+        cellLabel.textColor = .red
+        cellLabel.font = .boldSystemFont(ofSize: 24)
+        cellLabel.text = " 콘텐츠"
+        
+        recommandCollectionView.backgroundColor = .blue
+        recommandCollectionView.collectionViewLayout = collectionViewLayout()
+    }
+    func collectionViewLayout() -> UICollectionViewFlowLayout {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.itemSize = CGSize(width: 100, height: 100)
+        layout.minimumLineSpacing = 8
+        layout.minimumInteritemSpacing = 8
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 0)
+        
+        return layout
+        
+    }
 }

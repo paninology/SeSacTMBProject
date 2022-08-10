@@ -54,7 +54,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9iw-CH-9js" customClass="MovieView" customModule="SeSacTMBProject" customModuleProvider="target">
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9iw-CH-9js">
                                                                         <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdE-GS-C0E">
@@ -79,6 +79,7 @@
                                                                 </constraints>
                                                             </collectionViewCellContentView>
                                                             <connections>
+                                                                <outlet property="centerLabel" destination="cdE-GS-C0E" id="XfK-yX-E69"/>
                                                                 <outlet property="movieView" destination="9iw-CH-9js" id="A1G-UE-DA8"/>
                                                             </connections>
                                                         </collectionViewCell>
@@ -113,7 +114,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="recommandTableView" destination="ANC-G7-BC4" id="tN3-vo-dnk"/>
+                        <outlet property="recommandTableView" destination="ANC-G7-BC4" id="MvH-Zu-Npe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

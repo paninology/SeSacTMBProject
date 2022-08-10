@@ -11,13 +11,17 @@ class NewCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var movieView: MovieView!
     
+    @IBOutlet weak var centerLabel: UILabel!
+    
+    
     override func awakeFromNib() {
         print("ttttttt")
         setupUI()
     }
     
     func setupUI() {
-        movieView.backgroundColor = .black
+        movieView.backgroundColor = .systemPink
+        centerLabel.text = "testing..."
       
     }
     

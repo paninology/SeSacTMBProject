@@ -28,8 +28,12 @@ class RecommandViewController: UIViewController {
 
 extension RecommandViewController: UITableViewDelegate, UITableViewDataSource {
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        300
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
-        1
+        2
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         1
@@ -67,6 +71,7 @@ extension RecommandViewController: UICollectionViewDelegate, UICollectionViewDat
         
         
         
+        
         return cell
     }
     
@@ -74,10 +79,10 @@ extension RecommandViewController: UICollectionViewDelegate, UICollectionViewDat
         
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.itemSize = CGSize(width: UIScreen.main.bounds.width , height: 100)
-        layout.minimumLineSpacing = 0
-        layout.minimumInteritemSpacing = 0
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0 )
+        layout.itemSize = CGSize(width: UIScreen.main.bounds.width , height: 200)
+        layout.minimumLineSpacing = 8
+        layout.minimumInteritemSpacing = 8
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 0 )
         
         return layout
     }
