@@ -77,7 +77,7 @@ class APIManager {
     
     func requesRecommendImage(completionHandler: @escaping ([[String]],[[String]])-> ()) {
       
-        var posterList: [[String]] = []
+        var posterList: [[String]] = [] //두개 합쳐서 튜플로 만들던지. self.recommendList에 하나씩 초기화 해서 추가하던지
         var posterName: [[String]] = []
         
        

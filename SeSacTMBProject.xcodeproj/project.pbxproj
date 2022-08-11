@@ -19,6 +19,8 @@
 		8F46347E289CEBA30025D731 /* SearchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F46347C289CEBA30025D731 /* SearchCollectionViewCell.xib */; };
 		8F463480289CF7F30025D731 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F46347F289CF7F30025D731 /* Model.swift */; };
 		8F463483289CFC690025D731 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8F463482289CFC690025D731 /* Kingfisher */; };
+		8F54A72528A4CB8000B3B5EE /* TheaterLocation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F54A72428A4CB8000B3B5EE /* TheaterLocation.storyboard */; };
+		8F54A72828A4CBEA00B3B5EE /* TheaterLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F54A72728A4CBEA00B3B5EE /* TheaterLocationViewController.swift */; };
 		8F596DFE28A22B09005BD268 /* Recommand.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F596DFD28A22B09005BD268 /* Recommand.storyboard */; };
 		8F596E0428A22BF2005BD268 /* RecommandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F596E0328A22BF2005BD268 /* RecommandViewController.swift */; };
 		8F596E0E28A299E5005BD268 /* RecommandTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F596E0D28A299E5005BD268 /* RecommandTableViewCell.swift */; };
@@ -50,6 +52,8 @@
 		8F46347B289CEBA30025D731 /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		8F46347C289CEBA30025D731 /* SearchCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCollectionViewCell.xib; sourceTree = "<group>"; };
 		8F46347F289CF7F30025D731 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		8F54A72428A4CB8000B3B5EE /* TheaterLocation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TheaterLocation.storyboard; sourceTree = "<group>"; };
+		8F54A72728A4CBEA00B3B5EE /* TheaterLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterLocationViewController.swift; sourceTree = "<group>"; };
 		8F596DFD28A22B09005BD268 /* Recommand.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Recommand.storyboard; sourceTree = "<group>"; };
 		8F596E0328A22BF2005BD268 /* RecommandViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommandViewController.swift; sourceTree = "<group>"; };
 		8F596E0D28A299E5005BD268 /* RecommandTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommandTableViewCell.swift; sourceTree = "<group>"; };
@@ -83,6 +87,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8F54A72628A4CB8500B3B5EE /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				8F54A72428A4CB8000B3B5EE /* TheaterLocation.storyboard */,
+				8F54A72728A4CBEA00B3B5EE /* TheaterLocationViewController.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
 		8F596DFF28A22B17005BD268 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +170,7 @@
 				8F596DFF28A22B17005BD268 /* Main */,
 				8F596E0128A22B5A005BD268 /* Web */,
 				8F596E0228A22B77005BD268 /* Recommand */,
+				8F54A72628A4CB8500B3B5EE /* Location */,
 				8FCA00782899F6CE00F08BC1 /* Assets.xcassets */,
 				8FCA007A2899F6CE00F08BC1 /* LaunchScreen.storyboard */,
 				8FCA007D2899F6CE00F08BC1 /* Info.plist */,
@@ -262,6 +276,7 @@
 				8F596DFE28A22B09005BD268 /* Recommand.storyboard in Resources */,
 				8F33FD7A28A37743006E7B66 /* MovieView.xib in Resources */,
 				8FCA00842899F7D400F08BC1 /* .gitignore in Resources */,
+				8F54A72528A4CB8000B3B5EE /* TheaterLocation.storyboard in Resources */,
 				8FCA007C2899F6CE00F08BC1 /* LaunchScreen.storyboard in Resources */,
 				8F33FD8028A37900006E7B66 /* NewRecommandCollectionViewCell.xib in Resources */,
 				8F46347E289CEBA30025D731 /* SearchCollectionViewCell.xib in Resources */,
@@ -291,6 +306,7 @@
 				8FCA00882899F88400F08BC1 /* APIKey.swift in Sources */,
 				8F0A2462289FD25D006B5480 /* PreviewWebViewController.swift in Sources */,
 				8F33FD7F28A37900006E7B66 /* NewRecommandCollectionViewCell.swift in Sources */,
+				8F54A72828A4CBEA00B3B5EE /* TheaterLocationViewController.swift in Sources */,
 				8F463480289CF7F30025D731 /* Model.swift in Sources */,
 				8FF6A33C28A0D73100CF2835 /* APIManagers.swift in Sources */,
 				8FCA0096289A3AB800F08BC1 /* ReuserbleExtensions.swift in Sources */,
