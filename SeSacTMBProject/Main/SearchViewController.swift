@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import BasicFrameWork
 
 import Alamofire
 import SwiftyJSON

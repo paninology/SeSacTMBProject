@@ -7,6 +7,7 @@
 
 import UIKit
 import MapKit
+import BasicFrameWork
 
 class TheaterLocationViewController: UIViewController {
 
@@ -20,11 +21,10 @@ class TheaterLocationViewController: UIViewController {
         //37.517829, 126.886270
         let defaultCenter = CLLocationCoordinate2D(latitude: 37.517829, longitude: 126.886270)
         setCenterAndAnnotations(center: defaultCenter)
+        
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        showRequestLocationServiceAlert() //옮길것.
-    }
+ 
     
     func setCenterAndAnnotations(center: CLLocationCoordinate2D) {
         
@@ -68,6 +68,14 @@ extension TheaterLocationViewController { //접근권한에 대한 익스텐션
             checkUserCurrentLocationAuthorization(authorizationStatus)
         } else {
             print("위치 서비스가 꺼져있음. 위치 서비스 설정 요망")
+//            showRequestLocationServiceAlert() 지울것
+            showMyAlert(title: "위치정보 이용", message: "위치 서비스를 사용할 수 없습니다. 기기의 '설정>개인정보 보호'에서 위치 서비스를 켜주세요.", buttonTitle: "goSetting") { _ in
+                if let appSetting = URL(string: UIApplication.openSettingsURLString) {
+                    UIApplication.shared.open(appSetting)
+                }
+            }
+           
+            
         }
     }
     
@@ -81,18 +89,14 @@ extension TheaterLocationViewController { //접근권한에 대한 익스텐션
             locationManager.requestWhenInUseAuthorization()
         case .restricted, .denied:
             print("Denied, 아이폰 설정으로 유도")
-//        case .authorizedAlways:
-//            <#code#>
         case .authorizedWhenInUse:
             locationManager.startUpdatingLocation() //didUpdateLocations 호출
-//        case .authorized:
-//            <#code#>
         default: print("default")
         }
         
         
     }
-    func showRequestLocationServiceAlert() {
+    func showRequestLocationServiceAlert() { //지울것
       let requestLocationServiceAlert = UIAlertController(title: "위치정보 이용", message: "위치 서비스를 사용할 수 없습니다. 기기의 '설정>개인정보 보호'에서 위치 서비스를 켜주세요.", preferredStyle: .alert)
       let goSetting = UIAlertAction(title: "설정으로 이동", style: .destructive) { _ in
           //설정화면까지 이동 / 설정 세부화면까지 이동
