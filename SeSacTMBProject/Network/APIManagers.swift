@@ -36,7 +36,7 @@ class APIManager {
     }
     
     func requestTrending(page: Int, compelteHandler: @escaping ([[String]],[[String]]) -> ()) {  //[0].intValue
-        let url = EndPoint.TMDBURL + APIKey.TMBDKey + "&page=\(page)"
+        let url = EndPoint.TMDBURL + APIKey.TMDBKey + "&page=\(page)"
         APIManager.share.requestTMBD(url: url) { json in
             for n in json["results"].arrayValue { //map으로 바꿀 수 있을까/..
                 self.trendList.append(TMDBContents(title: n["title"].stringValue, releaseDate: n["release_date"].stringValue, genre: [n["genre_ids"].intValue], imageURL: n["poster_path"].stringValue, rate: n["vote_average"].doubleValue, id: n["id"].intValue))
@@ -51,7 +51,7 @@ class APIManager {
     func requestTMBDRecommend( movieId: Int, page: Int, compelteHandler: @escaping ([String], [String]) -> () ) {
 
         
-        let url = "https://api.themoviedb.org/3/movie/\(movieId)/recommendations?api_key=\(APIKey.TMBDKey)&language=ko-KR&\(page)"
+        let url = "https://api.themoviedb.org/3/movie/\(movieId)/recommendations?api_key=\(APIKey.TMDBKey)&language=ko-KR&\(page)"
         AF.request(url, method: .get).validate().responseData { response in
             switch response.result {
             case .success(let value):

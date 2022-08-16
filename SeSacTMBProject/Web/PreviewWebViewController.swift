@@ -30,7 +30,7 @@ class PreviewWebViewController: UIViewController {
   
     func getVideo() {
         
-        let url = "https://api.themoviedb.org/3/movie/\(movieID)/videos?api_key=\(APIKey.TMBDKey)&language=en-US"
+        let url = "https://api.themoviedb.org/3/movie/\(movieID)/videos?api_key=\(APIKey.TMDBKey)&language=en-US"
         AF.request(url, method: .get).validate().responseJSON(queue: .global()) { response in
             switch response.result {
             case .success(let value):

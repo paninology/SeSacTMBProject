@@ -47,21 +47,22 @@ class SearchViewController: UIViewController { //배우정보
     }
     
     func requestGenre() {
-        let url = EndPoint.TMDBGenre + APIKey.TMBDKey + "&language=en-US"
+        let url = EndPoint.TMDBGenre + APIKey.TMDBKey + "&language=en-US"
         
         APIManager.share.requestTMBD(url: url) { json in
             for n in json["genres"].arrayValue {
                 self.genre[n["id"].intValue] = n["name"].stringValue
+               
             }
             self.requestTrending()
         }
     }
     
     func requestTrending() {  //[0].intValue
-        let url = EndPoint.TMDBURL + APIKey.TMBDKey + "&page=\(currentPage)"
+        let url = EndPoint.TMDBURL + APIKey.TMDBKey + "&page=\(currentPage)"
         APIManager.share.requestTMBD(url: url) { json in
             for n in json["results"].arrayValue { //map으로 바꿀 수 있을까/..
-                self.TMDBs.append(TMDBContents(title: n["title"].stringValue, releaseDate: n["release_date"].stringValue, genre: [n["genre_ids"].intValue], imageURL: n["poster_path"].stringValue, rate: n["vote_average"].doubleValue, id: n["id"].intValue))
+                self.TMDBs.append(TMDBContents(title: n["title"].stringValue, releaseDate: n["release_date"].stringValue, genre: [n["genre_ids"][0].intValue], imageURL: n["poster_path"].stringValue, rate: n["vote_average"].doubleValue, id: n["id"].intValue))
             }
             self.totalPage = json["total_pages"].intValue
           
@@ -125,6 +126,7 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
 //
 //        }
         cell.genreLabel.text = self.genre[TMDBs[indexPath.row].genre[0]]
+        print(self.genre[TMDBs[indexPath.row].genre[0]],TMDBs[indexPath.row])
    
         cell.clipButton.tag = indexPath.row
         cell.clipButton.addTarget(self, action: #selector(clipButtonClicked), for: .touchUpInside)

@@ -44,9 +44,9 @@ class TheaterLocationViewController: UIViewController {
             
         }
         let annotation = MKPointAnnotation()
-        annotation.coordinate = CLLocationCoordinate2D(latitude: <#T##CLLocationDegrees#>, longitude: <#T##CLLocationDegrees#>)
-        
-        mapView.addAnnotations(<#T##annotations: [MKAnnotation]##[MKAnnotation]#>)
+//        annotation.coordinate = CLLocationCoordinate2D(latitude: <#T##CLLocationDegrees#>, longitude: <#T##CLLocationDegrees#>)
+//        
+//        mapView.addAnnotations(<#T##annotations: [MKAnnotation]##[MKAnnotation]#>)
         
         
     }

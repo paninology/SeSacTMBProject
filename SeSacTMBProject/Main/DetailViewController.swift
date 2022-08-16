@@ -40,7 +40,7 @@ class DetailViewController: UIViewController {
     
     func requestCasting() {
 
-        let url = "https://api.themoviedb.org/3/movie/\(TMBD.id)/credits?api_key=\(APIKey.TMBDKey)&language=en-US"
+        let url = "https://api.themoviedb.org/3/movie/\(TMBD.id)/credits?api_key=\(APIKey.TMDBKey)&language=en-US"
         APIManager.share.requestTMBD(url: url) { json in
             for n in json["cast"].arrayValue {
                 self.casting.append(Castings(name: n["name"].stringValue, id: n["id"].intValue, department: n["known_for_department"].stringValue, imagePath: n["profile_path"].stringValue))
@@ -69,7 +69,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: DetailTableViewCell.reuseIdentifier, for: indexPath) as! DetailTableViewCell
         
-        cell.crewImageView.kf.setImage(with: URL(string: "https://api.themoviedb.org/3/person/\(casting[indexPath.row].id)/images?api_key" + APIKey.TMBDKey + casting[indexPath.row].imagePath))
+        cell.crewImageView.kf.setImage(with: URL(string: "https://api.themoviedb.org/3/person/\(casting[indexPath.row].id)/images?api_key" + APIKey.TMDBKey + casting[indexPath.row].imagePath))
         
         cell.titleLabel.text = self.casting[indexPath.row].name
         cell.subTitleLabel.text = self.casting[indexPath.row].department
