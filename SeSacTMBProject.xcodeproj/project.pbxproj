@@ -26,6 +26,11 @@
 		8F596E0E28A299E5005BD268 /* RecommandTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F596E0D28A299E5005BD268 /* RecommandTableViewCell.swift */; };
 		8F5E35F528AB739D00B83407 /* BasicFrameWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F67177128AB6F8B0055C480 /* BasicFrameWork.framework */; };
 		8F5E35F628AB739D00B83407 /* BasicFrameWork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8F67177128AB6F8B0055C480 /* BasicFrameWork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8F5E35FA28ABC9ED00B83407 /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F5E35F928ABC9ED00B83407 /* Intro.storyboard */; };
+		8F5E35FD28ABCA4B00B83407 /* IntroPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5E35FC28ABCA4B00B83407 /* IntroPageViewController.swift */; };
+		8F5E35FF28ABCA6600B83407 /* firstPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5E35FE28ABCA6600B83407 /* firstPageViewController.swift */; };
+		8F5E360128ABCA6D00B83407 /* secondPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5E360028ABCA6D00B83407 /* secondPageViewController.swift */; };
+		8F5E360328ABCA7500B83407 /* thirdPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5E360228ABCA7500B83407 /* thirdPageViewController.swift */; };
 		8F67173928AB68C60055C480 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F67173828AB68C60055C480 /* APIKey.swift */; };
 		8FB05FCE28A2AB6A00F3E162 /* NewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB05FCD28A2AB6A00F3E162 /* NewCollectionViewCell.swift */; };
 		8FCA00702899F6CD00F08BC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCA006F2899F6CD00F08BC1 /* AppDelegate.swift */; };
@@ -89,6 +94,11 @@
 		8F596DFD28A22B09005BD268 /* Recommand.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Recommand.storyboard; sourceTree = "<group>"; };
 		8F596E0328A22BF2005BD268 /* RecommandViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommandViewController.swift; sourceTree = "<group>"; };
 		8F596E0D28A299E5005BD268 /* RecommandTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommandTableViewCell.swift; sourceTree = "<group>"; };
+		8F5E35F928ABC9ED00B83407 /* Intro.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Intro.storyboard; sourceTree = "<group>"; };
+		8F5E35FC28ABCA4B00B83407 /* IntroPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroPageViewController.swift; sourceTree = "<group>"; };
+		8F5E35FE28ABCA6600B83407 /* firstPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firstPageViewController.swift; sourceTree = "<group>"; };
+		8F5E360028ABCA6D00B83407 /* secondPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = secondPageViewController.swift; sourceTree = "<group>"; };
+		8F5E360228ABCA7500B83407 /* thirdPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = thirdPageViewController.swift; sourceTree = "<group>"; };
 		8F67173828AB68C60055C480 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		8F67176B28AB6F8A0055C480 /* BasicFrameWork.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BasicFrameWork.xcodeproj; path = ../BasicFrameWork/BasicFrameWork.xcodeproj; sourceTree = "<group>"; };
 		8FB05FCD28A2AB6A00F3E162 /* NewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -180,6 +190,19 @@
 			path = Intro;
 			sourceTree = "<group>";
 		};
+		8F5E35FB28ABC9F600B83407 /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				8F5E35F928ABC9ED00B83407 /* Intro.storyboard */,
+				8F5E35FC28ABCA4B00B83407 /* IntroPageViewController.swift */,
+				8F5E35FE28ABCA6600B83407 /* firstPageViewController.swift */,
+				8F5E360028ABCA6D00B83407 /* secondPageViewController.swift */,
+				8F5E360228ABCA7500B83407 /* thirdPageViewController.swift */,
+			);
+			name = Intro;
+			path = Main/Intro;
+			sourceTree = "<group>";
+		};
 		8F67176C28AB6F8A0055C480 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -224,6 +247,7 @@
 				8FF6A33A28A0D6D700CF2835 /* Network */,
 				8FCA0097289A3AE500F08BC1 /* Extensions */,
 				8F596E0028A22B38005BD268 /* XIBs */,
+				8F5E35FB28ABC9F600B83407 /* Intro */,
 				8F596DFF28A22B17005BD268 /* Main */,
 				8F596E0128A22B5A005BD268 /* Web */,
 				8F596E0228A22B77005BD268 /* Recommand */,
@@ -356,6 +380,7 @@
 				8F46347E289CEBA30025D731 /* SearchCollectionViewCell.xib in Resources */,
 				8FCA00792899F6CE00F08BC1 /* Assets.xcassets in Resources */,
 				8FCA00772899F6CD00F08BC1 /* Main.storyboard in Resources */,
+				8F5E35FA28ABC9ED00B83407 /* Intro.storyboard in Resources */,
 				8F0A2460289FD236006B5480 /* Web.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,15 +393,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F596E0E28A299E5005BD268 /* RecommandTableViewCell.swift in Sources */,
+				8F5E360128ABCA6D00B83407 /* secondPageViewController.swift in Sources */,
 				8F596E0428A22BF2005BD268 /* RecommandViewController.swift in Sources */,
 				8FCA00702899F6CD00F08BC1 /* AppDelegate.swift in Sources */,
+				8F5E35FF28ABCA6600B83407 /* firstPageViewController.swift in Sources */,
 				8FB05FCE28A2AB6A00F3E162 /* NewCollectionViewCell.swift in Sources */,
 				8F3A313B289E44860016DFF5 /* DetailTableViewCell.swift in Sources */,
 				8F3A3137289E38FA0016DFF5 /* DetailViewController.swift in Sources */,
 				8FCA00862899F82F00F08BC1 /* SearchViewController.swift in Sources */,
 				8F46347D289CEBA30025D731 /* SearchCollectionViewCell.swift in Sources */,
 				8FCA00722899F6CD00F08BC1 /* SceneDelegate.swift in Sources */,
+				8F5E360328ABCA7500B83407 /* thirdPageViewController.swift in Sources */,
 				8F0A2462289FD25D006B5480 /* PreviewWebViewController.swift in Sources */,
+				8F5E35FD28ABCA4B00B83407 /* IntroPageViewController.swift in Sources */,
 				8F33FD7F28A37900006E7B66 /* NewRecommandCollectionViewCell.swift in Sources */,
 				8F54A72828A4CBEA00B3B5EE /* TheaterLocationViewController.swift in Sources */,
 				8F463480289CF7F30025D731 /* Model.swift in Sources */,
