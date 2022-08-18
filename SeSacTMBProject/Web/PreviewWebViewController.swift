@@ -20,12 +20,14 @@ class PreviewWebViewController: UIViewController {
   
     var movieID = 0
     var destinationURL = ""
+    var previewHandler: (() -> ())?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         getVideo()
         openWebPage(url: "https://www.youtube.com/watch?v=\(destinationURL)")
         print(movieID, "======idididi")
+        previewHandler?()
     }
   
     func getVideo() {
@@ -58,14 +60,5 @@ class PreviewWebViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }

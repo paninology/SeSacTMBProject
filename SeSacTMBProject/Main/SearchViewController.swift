@@ -8,6 +8,7 @@
 import UIKit
 import BasicFrameWork
 
+import SnapKit
 import Alamofire
 import SwiftyJSON
 import Kingfisher
@@ -22,6 +23,15 @@ class SearchViewController: UIViewController { //배우정보
     var currentPage = 1
     var totalPage = 1
     
+    var recentVideoURL: String?
+    let recentVideo: UIButton = {
+       let view = UIButton()
+        view.setTitle("최근시청: ", for: .normal)
+
+        view.backgroundColor = .black
+        return view
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         cellLayoutSetting()
@@ -31,7 +41,19 @@ class SearchViewController: UIViewController { //배우정보
         searchCollectionView.register(UINib(nibName: SearchCollectionViewCell
             .reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: SearchCollectionViewCell.reuseIdentifier)
        
+        recentVideo.addTarget(self, action: #selector(recentVideoClicked), for: .touchUpInside)
         requestGenre()
+        configureUI()
+    }
+    
+    func configureUI() {
+        view.addSubview(recentVideo)
+        recentVideo.snp.makeConstraints { make in
+            make.height.equalTo(40)
+            make.width.equalTo(120)
+            make.top.equalTo(view.safeAreaLayoutGuide)
+            make.centerX.equalTo(view)
+        }
     }
     
     func cellLayoutSetting() {
@@ -69,6 +91,10 @@ class SearchViewController: UIViewController { //배우정보
           
             self.searchCollectionView.reloadData()
         }
+    }
+    
+    @objc func recentVideoClicked() {
+        
     }
  
 
@@ -123,11 +149,8 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
         cell.posterImageView.kf.setImage(with: URL(string: EndPoint.TMBDImageURL + TMDBs[indexPath.row].imageURL))
         cell.rateLabel.text =  "  \((round(TMDBs[indexPath.row].rate * 10) / 10 ).description)  "
         cell.releaseDateLabel.text = TMDBs[indexPath.row].releaseDate
-//        for n in 0...(self.genre[TMDBs[indexPath.row].genre.count - 1) {
-//
-//        }
+
         cell.genreLabel.text = self.genre[TMDBs[indexPath.row].genre[0]]
-        print(self.genre[TMDBs[indexPath.row].genre[0]],TMDBs[indexPath.row])
    
         cell.clipButton.tag = indexPath.row
         cell.clipButton.addTarget(self, action: #selector(clipButtonClicked), for: .touchUpInside)
@@ -150,8 +173,13 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
         let vc = sb.instantiateViewController(withIdentifier: PreviewWebViewController.reuseIdentifier) as! PreviewWebViewController
         
         vc.movieID = self.TMDBs[sender.tag].id
+        vc.previewHandler = {
+            self.recentVideo.setTitle(vc.movieID.description, for: .normal)
+        }
         self.navigationController?.pushViewController(vc, animated: true)
         
     }
+    
+    
     
 }
